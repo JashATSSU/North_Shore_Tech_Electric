@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request a Quote - North Shore Tech Electric</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Request a Quote</h1>
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a href="/services">Services</a></li>
+                <li><a href="/contact">Contact</a></li>
+                <li><a href="/quote">Request a Quote</a></li>
+                <li><a href="/team">Meet the Team</a></li>
+                <li><a href="/jobs">Completed Jobs</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Get a Quote</h2>
+            <form action="/quote" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required><br><br>
+
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone" required><br><br>
+
+                <label for="details">Job Details:</label><br>
+                <textarea id="details" name="details" rows="4" required></textarea><br><br>
+
+                <label for="request_owner">Request a Quote from the Owner:</label>
+                <input type="checkbox" id="request_owner" name="request_owner"><br><br>
+
+                <input type="submit" value="Submit">
+            </form>
+
+            {% if message %}
+                <p>{{ message }}</p>
+            {% endif %}
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 North Shore Tech Electric. All rights reserved.</p>
+    </footer>
+</body>
+</html>
