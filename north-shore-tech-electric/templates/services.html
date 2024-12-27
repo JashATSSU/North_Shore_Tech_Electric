@@ -5,34 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Services - North Shore Tech Electric</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: #0a3d62;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .logo h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #3c6382;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #0a3d62;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Responsive navigation menu */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                padding: 10px;
+                background-color: #0a3d62;
+                color: #fff;
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Our Services</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/quote">Request a Quote</a></li>
-                <li><a href="/team">Meet the Team</a></li>
-                <li><a href="/jobs">Completed Jobs</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="logo">
+                <h1>North Shore Tech Electric - Services</h1>
+            </div>
+            <nav>
+                <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
+                <ul id="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/quote">Request a Quote</a></li>
+                    <li><a href="/team">Meet the Team</a></li>
+                    <li><a href="/jobs">Completed Jobs</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
         <section>
-            <h2>Residential Services</h2>
-            <p>We provide comprehensive electrical services for homes, including wiring, lighting, and more...</p>
+            <div class="container">
+                <h2>Residential Services</h2>
+                <p>We provide comprehensive electrical services for homes, including wiring, lighting, and more. Whether you're building a new home, remodeling, or need maintenance, we ensure that your electrical systems are safe, reliable, and efficient.</p>
+            </div>
         </section>
+
         <section>
-            <h2>Commercial Services</h2>
-            <p>Our commercial services include electrical installations, maintenance, and emergency repairs...</p>
+            <div class="container">
+                <h2>Commercial Services</h2>
+                <p>Our commercial services include electrical installations, maintenance, and emergency repairs. We work with businesses of all sizes to ensure their electrical systems are optimized for safety and efficiency. From office buildings to retail spaces, we offer custom solutions tailored to your needs.</p>
+            </div>
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 North Shore Tech Electric. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 North Shore Tech Electric. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

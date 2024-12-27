@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,46 +5,177 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meet the Team - North Shore Tech Electric</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: #333;
+            background-color: #f8f8f8;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 15px;
+        }
+
+        header {
+            background-color: #0a3d62;
+            color: #fff;
+            padding: 10px 0;
+        }
+
+        .logo h1 {
+            margin: 0;
+            text-align: center;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+        }
+
+        nav ul li {
+            margin: 0 10px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 5px 10px;
+            transition: background-color 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #3c6382;
+            border-radius: 5px;
+        }
+
+        section {
+            padding: 40px 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .team-member {
+            margin-bottom: 30px;
+        }
+
+        .team-member h3 {
+            font-size: 1.4em;
+            margin: 10px 0;
+        }
+
+        .team-member p {
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #0a3d62;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        /* Responsive navigation menu */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+                display: none;
+            }
+
+            nav ul.active {
+                display: flex;
+            }
+
+            .menu-toggle {
+                display: block;
+                cursor: pointer;
+                padding: 10px;
+                background-color: #0a3d62;
+                color: #fff;
+                text-align: center;
+                font-size: 18px;
+            }
+        }
+
+        .menu-toggle {
+            display: none;
+        }
+    </style>
 </head>
 <body>
+
     <header>
-        <h1>Meet the Team</h1>
-        <nav>
-            <ul>
-                <li><a href="/">Home</a></li>
-                <li><a href="/about">About Us</a></li>
-                <li><a href="/services">Services</a></li>
-                <li><a href="/contact">Contact</a></li>
-                <li><a href="/quote">Request a Quote</a></li>
-                <li><a href="/team">Meet the Team</a></li>
-                <li><a href="/jobs">Completed Jobs</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <div class="logo">
+                <h1>North Shore Tech Electric - Meet the Team</h1>
+            </div>
+            <nav>
+                <div class="menu-toggle" onclick="toggleMenu()">Menu</div>
+                <ul id="nav-menu">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About Us</a></li>
+                    <li><a href="/services">Services</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                    <li><a href="/quote">Request a Quote</a></li>
+                    <li><a href="/team">Meet the Team</a></li>
+                    <li><a href="/jobs">Completed Jobs</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
     <main>
         <section>
-            <h2>Our Dedicated Team</h2>
-            <div class="team-member">
-                <h3>John Doe - CEO</h3>
-                <p>John has over 20 years of experience in the electrical industry. His leadership and expertise have been pivotal in growing North Shore Tech Electric into a trusted name.</p>
+            <div class="container">
+                <h2>Our Dedicated Team</h2>
+                <div class="team-member">
+                    <h3>John Doe - CEO</h3>
+                    <p>John has over 20 years of experience in the electrical industry. His leadership and expertise have been pivotal in growing North Shore Tech Electric into a trusted name.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Jane Smith - Lead Electrician</h3>
+                    <p>Jane specializes in commercial electrical systems and brings 15 years of expertise in installation, maintenance, and repair.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Alex Johnson - Project Manager</h3>
+                    <p>Alex ensures that every project is completed on time and within budget. His attention to detail and project management skills are second to none.</p>
+                </div>
+                <div class="team-member">
+                    <h3>Emily Davis - Customer Relations</h3>
+                    <p>Emily is dedicated to providing exceptional customer service and building lasting relationships with our clients.</p>
+                </div>
+                <!-- Add more team members as needed -->
             </div>
-            <div class="team-member">
-                <h3>Jane Smith - Lead Electrician</h3>
-                <p>Jane specializes in commercial electrical systems and brings 15 years of expertise in installation, maintenance, and repair.</p>
-            </div>
-            <div class="team-member">
-                <h3>Alex Johnson - Project Manager</h3>
-                <p>Alex ensures that every project is completed on time and within budget. His attention to detail and project management skills are second to none.</p>
-            </div>
-            <div class="team-member">
-                <h3>Emily Davis - Customer Relations</h3>
-                <p>Emily is dedicated to providing exceptional customer service and building lasting relationships with our clients.</p>
-            </div>
-            <!-- Add more team members as needed -->
         </section>
     </main>
+
     <footer>
-        <p>&copy; 2024 North Shore Tech Electric. All rights reserved.</p>
+        <div class="container">
+            <p>&copy; 2024 North Shore Tech Electric. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+    </script>
 </body>
 </html>

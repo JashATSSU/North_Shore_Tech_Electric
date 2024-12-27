@@ -1,102 +1,133 @@
-/* static/css/style.css */
-
-/* Global Styles */
-body {
-    font-family: 'Arial', sans-serif;
+/* Global Reset */
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base body styles */
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background-color: #f4f4f4;
     color: #333;
-    background-color: #f8f8f8;
+    line-height: 1.6;
+    padding-top: 80px;  /* Padding to avoid header overlap */
+    font-size: 16px;
 }
 
-header, footer {
-    background-color: #0a3d62;
+/* Container for centralized layout */
+.container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header Styling */
+header {
+    background-color: #002f47; /* Dark blue background */
     color: #fff;
-    padding: 10px 0;
-    text-align: center;
+    padding: 20px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    transition: all 0.3s ease-in-out;
 }
 
-header h1, footer p {
+header .logo h1 {
+    font-size: 2.2rem;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     margin: 0;
 }
 
 nav ul {
     list-style-type: none;
-    padding: 0;
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 20px;
 }
 
 nav ul li a {
     color: #fff;
     text-decoration: none;
-    font-weight: bold;
+    font-size: 1.1rem;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 30px;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 nav ul li a:hover {
-    text-decoration: underline;
-}
-
-main {
-    padding: 20px;
-}
-
-/* Sections */
-section {
-    margin-bottom: 20px;
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-h2 {
-    color: #0a3d62;
-    margin-top: 0;
-}
-
-/* Forms */
-form {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}
-
-form label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-form input, form textarea {
-    width: 100%;
-    padding: 8px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}
-
-form input[type="submit"] {
-    background-color: #0a3d62;
+    background-color: #00bcd4;  /* Hover effect (aqua blue) */
     color: #fff;
-    border: none;
-    cursor: pointer;
 }
 
-form input[type="submit"]:hover {
-    background-color: #3c6382;
+/* Main Section Styling */
+main {
+    padding: 60px 0;
+    background-color: #f9f9f9;
 }
 
-/* Specific Page Styles */
-.team-member, .job {
-    border-bottom: 1px solid #ccc;
-    padding: 10px 0;
+/* About Section Styling */
+.about-section {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    margin-bottom: 40px;
 }
 
-.team-member h3, .job h3 {
-    margin: 0;
+.about-section h2 {
+    font-size: 2.5rem;
+    color: #002f47;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+.about-section p {
+    font-size: 1.125rem;
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+/* Footer Styling */
+footer {
+    background-color: #002f47;
+    color: #fff;
+    padding: 15px 0;
+    text-align: center;
+}
+
+footer p {
+    font-size: 1rem;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    header .logo h1 {
+        font-size: 1.8rem;  /* Smaller logo font on mobile */
+    }
+
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    .about-section {
+        padding: 20px;
+    }
+
+    .container {
+        width: 90%; /* Allow more width on small screens */
+    }
 }
